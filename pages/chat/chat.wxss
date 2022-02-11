@@ -1,0 +1,227 @@
+page {
+    padding: 20rpx 12rpx 130rpx;
+    background-color: #ededed;
+}
+
+.show_time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+    color: #B7B7B7;
+    margin-bottom: 20rpx;
+}
+
+.search_row {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20rpx;
+    padding-bottom: 50rpx;
+    /* height: 80rpx; */
+    display: flex;
+    font-size: 32rpx;
+    border-top: 1rpx solid #ccc;
+    background-color: #f6f5f6;
+}
+
+.search_row input {
+    /* background-color: #f3f5f9; */
+    background-color: #fff;
+    flex: 6;
+    height: 100%;
+    padding-left: 30rpx;
+    border: 3rpx solid #e6e6e6;
+    border-radius: 24rpx;
+}
+
+/* 没有图片的时候 */
+.search_row .textarea2 {
+    position: relative;
+    /* background-color: #f3f5f9; */
+    background-color: #fff;
+    flex: 6;
+    border: 3rpx solid #e6e6e6;
+    border-radius: 24rpx;
+    font-size: 32rpx;
+    padding: 10rpx 30rpx;
+}
+
+/* 用户选择图片以后 */
+.search_row .textarea1 {
+    position: relative;
+    /* background-color: #f3f5f9; */
+    background-color: #fff;
+    flex: 6;
+    border: 3rpx solid #e6e6e6;
+    border-radius: 24rpx;
+    font-size: 32rpx;
+    padding: 10rpx 30rpx;
+    padding-bottom: 100rpx;
+}
+
+.image_content{
+    position: absolute;
+    height: 40rpx;
+    bottom: 20rpx;
+    left: 10rpx;
+    width: 60%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 40rpx;
+    margin-left: 12rpx;
+}
+
+.image{
+    position: relative;
+    width: 32%;
+    height: 200rpx;
+    margin: 8rpx;
+    margin-right: 0;
+}
+
+.moment_img{
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.image icon {
+    position: absolute;
+    top: -18rpx;
+    left: -15rpx;
+}
+
+.search_row .btn {
+    border-radius: 24rpx;
+    flex: 1;
+    font-size: 26rpx;
+    padding: 0;
+    margin: 0;
+    margin-left: 15rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8DCBF9;
+    background-color: #ffffff;
+}
+
+.icon-tianjia1 {
+    flex: 1;
+    font-size: 60rpx;
+    color: #8DCBF9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my_part {
+    /* position: relative; */
+    overflow: hidden;
+    margin-bottom: 30rpx;
+    margin-left: 100rpx;
+}
+
+.my_part .user_image {
+    /* position: absolute; */
+    float: right;
+    top: 5rpx;
+    right: 10rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 12rpx;
+}
+
+.my_part .content {
+    float: right;
+    /* position: absolute; */
+    position: relative;
+    max-width: 458rpx;
+    top: 5rpx;
+    right: 25rpx;
+    padding: 20rpx 25rpx;
+    border-radius: 12rpx;
+    background-color: #A9E979;
+    color: black;
+    font-size: 33rpx;
+}
+
+.my_part .content_image {
+    /* position: absolute; */
+    margin-right: 22rpx;
+    float: right;
+    top: 5rpx;
+    right: 115rpx;
+}
+
+.my_part .content_image image {
+    width: 255rpx;
+}
+
+.my_part .triangle {
+    position: absolute;
+    right: -28rpx;
+    top: 24rpx;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border: 15rpx solid transparent;
+    border-left: 15rpx solid #A9E979;
+}
+
+.his_part {
+    /* position: relative; */
+    overflow: hidden;
+    margin-bottom: 30rpx;
+    margin-right: 100rpx;
+}
+
+.his_part .user_image {
+    /* position: absolute; */
+    float: left;
+    top: 5rpx;
+    left: 10rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 12rpx;
+}
+
+.his_part .content {
+    /* position: absolute; */
+    max-width: 458rpx;
+    position: relative;
+    float: left;
+    top: 5rpx;
+    left: 25rpx;
+    padding: 20rpx 25rpx;
+    border-radius: 12rpx;
+    background-color: #fff;
+    color: black;
+    font-size: 33rpx;
+}
+
+.his_part .content_image {
+    /* position: absolute; */
+    margin-left: 22rpx;
+    float: left;
+    top: 5rpx;
+    left: 115rpx;
+}
+
+.his_part .content_image image {
+    width: 255rpx;
+}
+
+.his_part .triangle {
+    position: absolute;
+    left: -28rpx;
+    top: 24rpx;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border: 15rpx solid transparent;
+    border-right: 15rpx solid #fff;
+}

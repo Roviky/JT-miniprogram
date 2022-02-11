@@ -1,0 +1,14 @@
+<!-- <image src="/images/background.png" class="bg" mode="widthFix"></image> -->
+<view class="background"></view>
+<view class="contain" style="padding-bottom: {{57 + bottomLift}}px">
+    <view class="question_item" wx:for="{{list}}" wx:key="title">
+        <view class="question" bindtap="showDetail" data-index="{{index}}">
+            <text class="iconfont icon-fl-xinxi"></text>
+            <view style="margin-left: 30rpx">{{item.title}}</view>
+        </view>
+        <block wx:if="{{item.flag}}">
+            <view class="iconfont icon-xiala"></view>
+            <view class="content">{{item.content}}</view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,67 @@
+page {
+    background-color: #f3f5f9;
+}
+
+.divLine{
+    background: #e5e5e5;
+    height: 2rpx;
+}
+
+.rank_list_item {
+    background-color: #fffffe;
+    position: relative;
+    display: flex;
+    padding: 20rpx;
+    padding-left: 40rpx;
+    align-items: center;
+}
+
+.user_image {
+    flex: 2;
+    width: 85rpx;
+    height: 85rpx;
+}
+
+.user_image image {
+    width: 85rpx;
+    height: 85rpx;
+    border-radius: 50%;
+}
+
+.main_content {
+    flex: 9;
+    display: flex;
+    align-items: center;
+    padding-left: 20rpx;
+    font-size: 38rpx;
+    color: black;
+    /* 多余的部分 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.empty {
+    position: relative;
+  }
+  
+  .bg {
+    position: absolute;
+    margin-top: 20rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 390rpx;
+    height: 390rpx;
+  }
+  
+  .empty .text {
+    width: 575rpx;
+    position: absolute;
+    color: #b3b3b3;
+    font-size: 45rpx;
+    left: 50%;
+    top: 450rpx;
+    transform: translateX(-28%);
+  }

@@ -1,0 +1,90 @@
+/* pages/publish/publish.wxss */
+.page{
+    position: relative;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-top: 5rpx;
+    background-color: #fff;
+}
+
+.section {
+    background-color: #f3f3ff;
+    padding: 20rpx;
+    border-bottom: 3rpx solid #ccc;
+}
+
+.picker {
+    font-size: 35rpx;
+    margin-bottom: 12rpx;
+}
+
+.mile_count {
+    display: flex;
+    align-items: center;
+    font-size: 36rpx;
+}
+
+.mile_count view {
+    flex: 2;
+}
+
+.mile_count input {
+    flex: 4;
+    font-size: 35rpx;
+    /* border-bottom: 2rpx solid black; */
+}
+
+.text{
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 20px;
+    padding: 5px;
+    height: 200rpx;
+}
+
+.image_content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40rpx;
+    margin-left: 12rpx;
+}
+
+.image{
+    position: relative;
+    width: 32%;
+    height: 200rpx;
+    margin: 8rpx;
+    margin-right: 0;
+}
+
+.image icon {
+    position: absolute;
+    top: -20rpx;
+    left: -20rpx;
+}
+
+.moment_img{
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.current {
+    position: absolute;
+    right: 21rpx;
+    top: 380rpx;
+    font-size: 26rpx;
+    color: grey;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A9EA8C;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 80rpx;
+    border-radius: 24rpx;
+}

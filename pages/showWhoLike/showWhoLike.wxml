@@ -1,0 +1,16 @@
+<view wx:if="{{userList.length > 0}}">
+    <view wx:for="{{userList}}" wx:key="user_id">
+        <view class="rank_list_item" bindtap="showUser" data-userid="{{item.user_id}}">
+            <view class="user_image">
+                <image src="{{item.user_avatar_url}}"></image>
+            </view>
+            <view class="main_content">{{item.user_name}}</view>
+        </view>
+        <view class="divLine"></view>
+    </view>
+</view>
+<!-- 没人点赞 -->
+<view wx:else class="empty">
+    <image class="bg" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/yonghu.png"></image>
+    <view class="text">还没有朋友点赞</view>
+</view>

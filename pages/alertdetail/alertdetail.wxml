@@ -1,0 +1,81 @@
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+        <view wx:if="{{noMessage}}" class="empty">
+            <image class="bg" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/empty.png" mode="widthFix"></image>
+            <view class="text">暂时还没有您的消息通知哦～</view>
+        </view>
+        <view wx:else>
+            <view wx:for="{{inform_list}}" wx:key="*this">
+                <view class="list_item" wx:if="{{item.flag == 0}}">
+                    <view class='title_area'>
+                        <!-- 头像 -->
+                        <view class='avatar_area' catchtap="showUser" data-userid="{{item.othersId}}">
+                            <image class='avatar' src='{{item.othersAvatar}}' />
+                        </view>
+                        <!-- 用户名 + 时间 -->
+                        <view class='text_area'>
+                            <view>
+                                <text class='author_name'>{{item.othersNickName}}</text>
+                            </view>
+                            <view class='publish_time'>
+                                <text class='publish_time'>{{item.publish_time}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 收藏 -->
+                    <view wx:if="{{item.flag == 0}}" class="bottom_text">
+                        <text class="iconfont icon-aixin" decode="{{true}}">&nbsp;赞了你</text>
+                    </view>
+                    <!-- 原帖子的链接 -->
+                    <view class="right_content" bindtap="showPostDetail" data-postid="{{item.postId}}">
+                        <view wx:if="{{item.imageUrls.length != 0}}">
+                            <image src="{{item.imageUrls[0]}}" class="content_img" />
+                        </view>
+                        <view wx:else class="right_text">{{item.postContent}}</view>
+                    </view>
+                </view>
+                <view class="divLine" wx:if="{{item.flag == 0}}"></view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{tabs[1].isActive}}">
+        <view wx:if="{{noMessage}}" class="empty">
+            <image class="bg" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/empty.png" mode="widthFix"></image>
+            <view class="text">暂时还没有您的消息通知哦～</view>
+        </view>
+        <view wx:else>
+            <view wx:for="{{inform_list}}" wx:key="*this">
+                <view class="list_item" wx:if="{{item.flag == 1}}">
+                    <view class='title_area'>
+                        <!-- 头像 -->
+                        <view class='avatar_area' catchtap="showUser" data-userid="{{item.othersId}}">
+                            <image class='avatar' src='{{item.othersAvatar}}' />
+                        </view>
+                        <!-- 用户名 + 时间 -->
+                        <view class='text_area'>
+                            <view>
+                                <text class='author_name'>{{item.othersNickName}}</text>
+                            </view>
+                            <view class='publish_time'>
+                                <text class='publish_time'>{{item.publish_time}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 评论 -->
+                    <view wx:if="{{item.flag == 1}}" class="bottom_text">
+                        <text class="iconfont icon-pinglun" decode="{{true}}">&nbsp;评论了你的主题贴</text>
+                        <view class="content">{{item.commentContent}}</view>
+                    </view>
+                    <!-- 原帖子的链接 -->
+                    <view class="right_content" bindtap="showPostDetail" data-postid="{{item.postId}}">
+                        <view wx:if="{{item.imageUrls.length != 0}}">
+                            <image src="{{item.imageUrls[0]}}" class="content_img" />
+                        </view>
+                        <view wx:else class="right_text">{{item.postContent}}</view>
+                    </view>
+                </view>
+                <view class="divLine" wx:if="{{item.flag == 1}}"></view>
+            </view>
+        </view>
+    </block>
+</Tabs>

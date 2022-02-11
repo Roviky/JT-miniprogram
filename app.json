@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ranking/ranking",
+    "pages/public_notice/public_notice",
+    "pages/alert/alert",
+    "pages/alertdetail/alertdetail",
+    "pages/chat/chat",
+    "pages/user/user",
+    "pages/publish/publish",
+    "pages/postdetail/postdetail",
+    "pages/otherspage/otherspage",
+    "pages/mydetail/mydetail",
+    "pages/relatedPost/relatedPost",
+    "pages/showWhoLike/showWhoLike",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#4e936f",
+    "navigationBarTitleText": "简碳",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "color": "#000",
+    "selectedColor": "#A9EA8C",
+    "position": "bottom",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/public_notice/public_notice",
+        "text": "公示",
+        "iconPath": "/images/gonggao.png",
+        "selectedIconPath": "/images/gonggao.png"
+      },
+      {
+        "pagePath": "pages/ranking/ranking",
+        "text": "排行",
+        "iconPath": "/images/paihang.png",
+        "selectedIconPath": "/images/paihang.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/huanbao.png",
+        "selectedIconPath": "/images/huanbao.png"
+      },
+      {
+        "pagePath": "pages/alert/alert",
+        "text": "消息",
+        "iconPath": "/images/tishi.png",
+        "selectedIconPath": "/images/tishi.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/images/wode.png",
+        "selectedIconPath": "/images/wode.png"
+      }
+    ]
+  }
+}

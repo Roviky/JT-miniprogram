@@ -1,0 +1,30 @@
+<view class='page'>
+    <!-- 选择框 -->
+    <view class="section">
+        <picker bindchange="bindPickerChange" value="{{themeIndex}}" range="{{themeArray}}">
+            <view class="picker">交通工具：{{themeArray[themeIndex]}}</view>
+        </picker>
+        <view class="mile_count">
+            <view>里程数(km)：</view>
+            <input placeholder="数字格式哦！" bindinput="handleMileCount"></input>
+        </view>
+    </view>
+    <!-- 输入的文本框 -->
+    <textarea value="{{content}}" class='text' bindinput="input" placeholder="记录你的打卡吧～" maxlength='{{maxContentLength}}' />
+    <!-- 图片的上传 -->
+    <view class="image_content">
+        <view class='image' wx:for="{{img_url}}" wx:key="*this">
+            <image bindtap="handlePreview" data-url="{{item}}" class="moment_img" src="{{item}}"></image>
+            <icon bindtap="handleRemove" data-index="{{index}}" type="clear" size="24" color="red"></icon>
+        </view>
+        <!-- <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+            <image bindtap="chooseImage" class="moment_img" src='../../images/add.png'></image>
+        </view> -->
+        <view class='image' wx:if="{{img_url.length <= 8}}">
+            <image bindtap="chooseImage" class="moment_img" src='cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/add.png'></image>
+        </view>
+    </view>
+    <text class="current">{{totalNum}}/100</text>
+    <button bindtap="send" class="btn">发布</button>
+</view>
+<!-- <button  open-type="share">测试按钮</button> -->

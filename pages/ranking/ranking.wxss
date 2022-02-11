@@ -1,0 +1,276 @@
+page {
+    background-color: #4e936f;
+    padding-bottom: 110rpx;
+}
+
+.avatar1 {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+}
+
+.avatar2 {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+}
+
+.yellow1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -30rpx;
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    background-color: #ffef2e;
+}
+
+.yellow2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -30rpx;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    background-color: #ffef2e;
+    font-size: 12px;
+}
+
+.username {
+    position: relative;
+    top: 20rpx;
+    font-size: 14px;
+    color: #fff;
+    overflow: hidden;
+    white-space:nowrap; 
+    width: 6rem; 
+    text-overflow: ellipsis;
+}
+
+.ranking {
+    text-align: center;
+}
+
+.first {
+    position: absolute;
+    top: 140rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 50rpx;
+}
+
+.second {
+    position: absolute;
+    top: 165rpx;
+    left: 23%;
+    transform: translateX(-50%);
+    margin-bottom: 50rpx;
+}
+
+.third {
+    position: absolute;
+    top: 165rpx;
+    left: 78%;
+    transform: translateX(-50%);
+    margin-bottom: 50rpx;
+}
+
+.list {
+    margin-top: 20px;
+    padding-top: 30rpx;
+    padding-bottom: 100rpx;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 80rpx 80rpx 0rpx 0rpx;
+}
+
+.user_img_wrap {
+    position: relative;
+    height: 190px;
+}
+
+.user_img_wrap .time {
+    position: absolute;
+    top: 87rpx;
+    left: 42rpx;
+    font-size: 45rpx;
+    font-weight: bold;
+    color: #fff;
+}
+
+.user_img_wrap .total_time {
+    left: 50rpx;
+    top: 78rpx;
+    font-size: 52rpx;
+}
+
+.show_first {
+    position: absolute;
+    top: 148rpx;
+    left: 42rpx;
+    width: 300rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show_first image {
+    width: 65rpx;
+    height: 65rpx;
+    z-index: 1000;
+    box-shadow: 0 0 15rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.show_first view {
+    margin-left: 15rpx;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.tabs {
+    position: absolute;
+    top: 20rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350rpx;
+    display: flex;
+    border-radius: 23rpx;
+    overflow: hidden;
+}
+
+.title_item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rpx 0;
+    font-size: 26rpx; 
+    background-color: #f1f1f1;
+    color: gray;
+}
+
+.active {
+    color: white;
+    background-color: rgb(171, 171, 171);
+}
+
+.user_img_wrap .user_bg {
+    width: 100%;
+    height: 42vh;
+    filter: blur(10rpx);
+}
+
+.user_info_wrap .user_img_wrap .user_info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25%;
+    text-align: center;
+}
+
+.user_info_wrap .user_img_wrap .user_info .user_icon {
+    border-radius: 50%;
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.sep {
+    background-color: #f2f2f2;
+    width: 100vw;
+    height: 18rpx;
+}
+
+.divLine{
+    background: #e5e5e5;
+    height: 2rpx;
+    margin-left: 68rpx;
+}
+
+.rank_list_item {
+    /* background-color: #fffffe; */
+    position: relative;
+    display: flex;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    align-items: center;
+}
+
+.my_info_item {
+    margin-top: 10rpx;
+}
+
+.rank_num {
+    width: 72rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20rpx;
+}
+
+.user_image {
+    flex: 2;
+    width: 85rpx;
+    height: 85rpx;
+}
+
+.user_image image {
+    width: 85rpx;
+    height: 85rpx;
+    border-radius: 16rpx;
+}
+
+.main_content {
+    flex: 9;
+    display: flex;
+    align-items: center;
+    padding-left: 20rpx;
+    font-size: 36rpx;
+    color: black;
+    margin-right: 35px;
+    /* 多余的部分 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.reduction {
+    flex: 2;
+    color: #4c4c4c;
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-left: -50rpx;
+}
+
+.my_reduction {
+    flex: 2;
+    color: #07AD56;
+    font-size: 46rpx;
+    font-weight: bold;
+    margin-left: -10rpx;
+}
+
+.star {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.star_count {
+    color: #888888;
+}
+
+.icon-aixin2 {
+    font-size: 33rpx;
+    color: #B3B3B3;
+}
+
+.star .redIcon {
+    color: rgb(255, 105, 86);
+}

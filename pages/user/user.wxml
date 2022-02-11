@@ -1,0 +1,39 @@
+<!--pages/user2/user2.wxml-->
+<image mode="widthFix" class="bg1" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/img2/bg2.png"></image>
+<view class='user_info_wrap'>
+
+    <view wx:if="{{userInfo.avatarUrl}}" class="user_img_wrap">
+        <!-- 背景图片 -->
+        <!-- <image class="user_bg" src="{{userInfo.avatarUrl}}"></image> -->
+        <image class="user_bg" src="{{userInfo.avatarUrl}}"></image>
+        <view class="user_info">
+            <image class="user_icon_img" src="{{userInfo.avatarUrl}}"></image>
+            <view class="user_name">{{userInfo.nickName}}</view>
+        </view>
+    </view>
+    <view wx:else>
+        <button class="user_btn" type="default" plain="{{true}}" bindtap="getUserProfile">
+            获取头像昵称
+        </button>
+        <!-- <text class='tips'>Tips: 必须授权才能使用全部功能</text> -->
+    </view>
+</view>
+
+<view class="content">
+    <view class="mine">
+        <navigator url="/pages/mydetail/mydetail?pageId=0" class="app_info_item">我的减碳</navigator>
+        <navigator url="/pages/mydetail/mydetail?pageId=1" class="app_info_item">我的动态</navigator>
+        <navigator url="/pages/mydetail/mydetail?pageId=2" class="app_info_item">我的收藏</navigator>
+        <navigator url="/pages/mydetail/mydetail?pageId=3" class="app_info_item">我的评论</navigator>
+    </view>
+    <view class="mine">
+        <navigator class="app_info_item">捐赠 && 捐赠记录</navigator>
+    </view>
+    <view class="mine contact">
+        联系客服
+        <button open-type="feedback"></button>
+    </view>
+    <view class="mine">
+        <navigator class="app_info_item" url="/pages/about/about">关于小程序与帮助</navigator>
+    </view>
+</view>

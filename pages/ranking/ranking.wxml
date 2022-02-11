@@ -1,0 +1,217 @@
+<!-- 最上面的图片 -->
+<!-- 选择今天 -->
+<view class="user_img_wrap" wx:if="{{tabs[0].isActive}}">
+    <!-- 背景图片 -->
+    <!-- <image class="user_bg" src="{{firstInfoDay.user_avatar_url}}"></image> -->
+    <!-- 时间 -->
+    <!-- <view class="time">{{timeStrDay}}</view> -->
+    <!-- 谁占领了 -->
+    <!-- <view class="show_first">
+        <image src="{{firstInfoDay.user_avatar_url}}"></image>
+        <view>{{firstInfoDay.user_name}}占领了封面</view>
+    </view> -->
+    <view class="tabs">
+        <view wx:for="{{tabs}}" wx:key="id" class="title_item {{item.isActive?'active':''}}" bindtap="handleItemTap" data-index="{{index}}">
+            {{item.name}}
+        </view>
+    </view>
+    <!-- 前三名 -->
+    <view class="ranking">
+        <!-- 第一名 -->
+        <view class="first">
+            <image class='avatar1' src='{{rank_list_day[0].user_avatar_url}}' />
+            <view class="yellow1">1</view>
+            <view class="username">{{rank_list_day[0].user_name}}</view>
+        </view>
+        <!-- 第二名 -->
+        <view class="second">
+            <image class='avatar2' src='{{rank_list_day[1].user_avatar_url}}' />
+            <view class="yellow2">2</view>
+            <view class="username">{{rank_list_day[1].user_name}}</view>
+        </view>
+        <!-- 第三名 -->
+        <view class="third">
+            <image class='avatar2' src='{{rank_list_day[2].user_avatar_url}}' />
+            <view class="yellow2">3</view>
+            <view class="username">{{rank_list_day[2].user_name}}</view>
+        </view>
+    </view>
+</view>
+<!-- 选择本周 -->
+<view class="user_img_wrap" wx:if="{{tabs[1].isActive}}">
+    <!-- 背景图片 -->
+    <!-- <image class="user_bg" src="{{firstInfoWeek.user_avatar_url}}"></image> -->
+    <!-- 时间 -->
+    <!-- <view class="time">{{timeStrWeek}}</view> -->
+    <!-- 谁占领了 -->
+    <!-- <view class="show_first">
+        <image src="{{firstInfoWeek.user_avatar_url}}"></image>
+        <view>{{firstInfoWeek.user_name}}占领了封面</view>
+    </view> -->
+    <view class="tabs">
+        <view wx:for="{{tabs}}" wx:key="id" class="title_item {{item.isActive?'active':''}}" bindtap="handleItemTap" data-index="{{index}}">
+            {{item.name}}
+        </view>
+    </view>
+    <!-- 前三名 -->
+    <view class="ranking">
+        <!-- 第一名 -->
+        <view class="first">
+            <image class='avatar1' src='{{rank_list_week[0].user_avatar_url}}' />
+            <view class="yellow1">1</view>
+            <view class="username">{{rank_list_week[0].user_name}}</view>
+        </view>
+        <!-- 第二名 -->
+        <view class="second">
+            <image class='avatar2' src='{{rank_list_week[1].user_avatar_url}}' />
+            <view class="yellow2">2</view>
+            <view class="username">{{rank_list_week[1].user_name}}</view>
+        </view>
+        <!-- 第三名 -->
+        <view class="third">
+            <image class='avatar2' src='{{rank_list_week[2].user_avatar_url}}' />
+            <view class="yellow2">3</view>
+            <view class="username">{{rank_list_week[2].user_name}}</view>
+        </view>
+    </view>
+</view>
+<!-- 选择总共 -->
+<view class="user_img_wrap" wx:if="{{tabs[2].isActive}}">
+    <!-- 背景图片 -->
+    <!-- <image class="user_bg" src="{{firstInfoTotal.user_avatar_url}}"></image> -->
+    <!-- 时间 -->
+    <!-- <view class="time total_time">{{timeStrTotal}}</view> -->
+    <!-- 谁占领了 -->
+    <!-- <view class="show_first">
+        <image src="{{firstInfoTotal.user_avatar_url}}"></image>
+        <view>{{firstInfoTotal.user_name}}占领了封面</view>
+    </view> -->
+    <view class="tabs">
+        <view wx:for="{{tabs}}" wx:key="id" class="title_item {{item.isActive?'active':''}}" bindtap="handleItemTap" data-index="{{index}}">
+            {{item.name}}
+        </view>
+    </view>
+    <!-- 前三名 -->
+    <view class="ranking">
+        <!-- 第一名 -->
+        <view class="first">
+            <image class='avatar1' src='{{rank_list_total[0].user_avatar_url}}' />
+            <view class="yellow1">1</view>
+            <view class="username">{{rank_list_total[0].user_name}}</view>
+        </view>
+        <!-- 第二名 -->
+        <view class="second">
+            <image class='avatar2' src='{{rank_list_total[1].user_avatar_url}}' />
+            <view class="yellow2">2</view>
+            <view class="username">{{rank_list_total[1].user_name}}</view>
+        </view>
+        <!-- 第三名 -->
+        <view class="third">
+            <image class='avatar2' src='{{rank_list_total[2].user_avatar_url}}' />
+            <view class="yellow2">3</view>
+            <view class="username">{{rank_list_total[2].user_name}}</view>
+        </view>
+    </view>
+</view>
+<view wx:else></view>
+
+<!-- 我的排名 -->
+<!-- <view class="rank_list_item my_info_item"> -->
+    <!-- 排名 -->
+    <!-- <view class="rank_num" wx:if="{{tabs[0].isActive}}">{{myIndexDay+1}}</view>
+    <view class="rank_num" wx:elif="{{tabs[1].isActive}}">{{myIndexWeek+1}}</view>
+    <view class="rank_num" wx:elif="{{tabs[2].isActive}}">{{myIndexTotal+1}}</view>
+    <view wx:else></view>
+    <view class="user_image">
+        <image src="{{userInfo.user_avatar_url}}"></image>
+    </view> -->
+    <!-- 用户名 -->
+    <!-- <view class="main_content">{{userInfo.user_name}}</view> -->
+    <!-- 减排量 -->
+    <!-- <view class="my_reduction" wx:if="{{tabs[0].isActive}}">
+        {{rank_list_day[myIndexDay].day_data.carbon_reduction}}
+    </view>
+    <view class="my_reduction" wx:elif="{{tabs[1].isActive}}">
+        {{rank_list_week[myIndexWeek].week_data.carbon_reduction}}
+    </view>
+    <view class="my_reduction" wx:elif="{{tabs[2].isActive}}">
+        {{rank_list_total[myIndexTotal].total_data.carbon_reduction}}
+    </view>
+    <view wx:else></view>
+    <view class="star" wx:if="{{tabs[0].isActive}}" bindtap="showWhoLike" data-flag="{{0}}"> -->
+        <!-- 点赞数 -->
+        <!-- <view class="star_count">{{rank_list_day[myIndexDay].day_data.like_num}}</view>
+        <view class="iconfont icon-aixin2"></view>
+    </view>
+    <view class="star" wx:if="{{tabs[1].isActive}}"> -->
+        <!-- 点赞数 -->
+        <!-- <view class="star_count">{{rank_list_week[myIndexWeek].week_data.like_num}}</view>
+        <view class="iconfont icon-aixin2"></view>
+    </view>
+    <view class="star" wx:if="{{tabs[2].isActive}}"> -->
+        <!-- 点赞数 -->
+        <!-- <view class="star_count">{{rank_list_total[myIndexTotal].total_data.like_num}}</view>
+        <view class="iconfont icon-aixin2"></view>
+    </view>
+    <view wx:else>
+    </view>
+</view> -->
+<!-- 中间的分隔符 -->
+<!-- <view class="sep"></view> -->
+
+<!-- 所有人的排名 -->
+<!-- 当天 -->
+<view wx:if="{{tabs[0].isActive}}" class="list">
+    <view wx:for="{{rank_list_day}}" wx:key="user_id">
+        <view class="rank_list_item" bindtap="showUser" data-userid="{{item.user_id}}">
+            <view class="rank_num">{{index+1}}</view>
+            <view class="user_image">
+                <image src="{{item.user_avatar_url}}"></image>
+            </view>
+            <view class="main_content">{{item.user_name}}</view>
+            <view class="reduction">{{item.day_data.carbon_reduction}}</view>
+            <view class="star">
+                <view class="star_count">{{item.day_data.like_num}}</view>
+                <view catchtap="handleCollect" data-flag="{{0}}" data-userindex="{{index}}" data-userid="{{item.user_id}}" class="iconfont icon-aixin2 {{item.isCollect ? 'redIcon' : 'grayIcon'}}"></view>
+            </view>
+        </view>
+        <view class="divLine"></view>
+    </view>
+</view>
+<!-- 本周 -->
+<view wx:elif="{{tabs[1].isActive}}"  class="list">
+    <view wx:for="{{rank_list_week}}" wx:key="user_id">
+        <view class="rank_list_item" bindtap="showUser" data-userid="{{item.user_id}}">
+            <view class="rank_num">{{index+1}}</view>
+            <view class="user_image">
+                <image src="{{item.user_avatar_url}}"></image>
+            </view>
+            <view class="main_content">{{item.user_name}}</view>
+            <view class="reduction">{{item.week_data.carbon_reduction}}</view>
+            <view class="star">
+                <view class="star_count">{{item.week_data.like_num}}</view>
+                <view catchtap="handleCollect" data-flag="{{1}}" data-userindex="{{index}}" data-userid="{{item.user_id}}" class="iconfont icon-aixin2 {{item.isCollect ? 'redIcon' : 'grayIcon'}}"></view>
+            </view>
+        </view>
+        <view class="divLine"></view>
+    </view>
+</view>
+<!-- 全部 -->
+<view wx:elif="{{tabs[2].isActive}}"  class="list">
+    <view wx:for="{{rank_list_total}}" wx:key="user_id">
+        <view class="rank_list_item" bindtap="showUser" data-userid="{{item.user_id}}">
+            <view class="rank_num">{{index+1}}</view>
+            <view class="user_image">
+                <image src="{{item.user_avatar_url}}"></image>
+            </view>
+            <view class="main_content">{{item.user_name}}</view>
+            <view class="reduction">{{item.total_data.carbon_reduction}}</view>
+            <view class="star">
+                <view class="star_count">{{item.total_data.like_num}}</view>
+                <view catchtap="handleCollect" data-flag="{{2}}" data-userindex="{{index}}" data-userid="{{item.user_id}}" class="iconfont icon-aixin2 {{item.isCollect ? 'redIcon' : 'grayIcon'}}"></view>
+            </view>
+        </view>
+        <view class="divLine"></view>
+    </view>
+</view>
+<view wx:else></view>

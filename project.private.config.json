@@ -1,0 +1,54 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "发布页面",
+                    "pathName": "pages/publish/publish",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "详情",
+                    "pathName": "pages/postdetail/postdetail",
+                    "query": "postid=cd045e75612cc10f08dc10026347118f",
+                    "scene": null
+                },
+                {
+                    "name": "排行榜",
+                    "pathName": "pages/ranking/ranking",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "他人页面",
+                    "pathName": "pages/otherspage/otherspage",
+                    "query": "userid=oSs_T4sRocT7EDGski2iLNl_3Fd4",
+                    "scene": null
+                },
+                {
+                    "name": "我的详情",
+                    "pathName": "pages/mydetail/mydetail",
+                    "query": "pageId=0",
+                    "scene": null
+                },
+                {
+                    "name": "他人页面2",
+                    "pathName": "pages/otherspage/otherspage",
+                    "query": "userid=oSs_T4tadZMLskUj0umVv12MTv8w",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

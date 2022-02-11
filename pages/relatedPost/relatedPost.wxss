@@ -1,0 +1,146 @@
+.divLine{
+    background: #EEEDEE;
+    /* background-color: #8DCBF9; */
+    width: 100%;
+    height: 3rpx;
+  }
+  
+  .post_list{
+    margin: 26rpx;
+    /* margin: 10rpx; */
+    position: relative;
+    /* border: 10rpx solid #A3DEF0; */
+    /* padding: 20rpx; */
+  }
+  
+  .theme {
+    position: absolute;
+    right: 30rpx;
+    top: 9rpx;
+    background-color: #8DCBF9;
+    color: white;
+    font-size: 28rpx;
+    border-radius: 12rpx;
+    padding: 10rpx;
+  }
+  
+  .transport {
+    position: absolute;
+    right: 145rpx;
+    top: 10rpx;
+    color: #8DCBF9;
+    font-size: 50rpx;
+  }
+  
+  .icon-zixingche {
+    font-size: 58rpx;
+  }
+  
+  .title_area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .avatar{
+    width: 80rpx;
+    height: 80rpx;
+  }
+  
+  .text_area {
+    margin-left: 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .publish_time{
+    font-size: 8pt;
+    color: gray;
+    margin-top: 1rpx;
+  }
+  
+  .title{
+    padding: 9rpx;
+    width: 600rpx;
+    font-size: 12pt; 
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  
+  .image_area{
+  position: relative;
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-top: 20rpx;
+  margin-left: 12rpx;
+  }
+  
+  .image_area .img {
+  width: 28%;
+  height: 180rpx;
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: 20rpx;
+  padding: 0;
+  }
+  
+  .image_area .img image {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .image_area text {
+  position: absolute;
+  right: 50rpx;
+  top: 50rpx;
+  font-size: 70rpx;
+  }
+  
+  .layout_horizontal{
+    height: auto;
+    display: flex;
+    padding-left: 500rpx;
+    align-items: center;
+  }
+  
+  .extra_info{
+    font-size: 10pt;
+    color: lightgray;
+    padding-left: 8rpx;
+    padding-right: 8rpx;
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis; */
+  }
+  
+  .new_post{
+    float: right;
+    position: fixed;
+    bottom: 200rpx;
+    right: 60rpx;
+    /*border-radius: 500px;*/
+    width: 115rpx;
+  }
+  
+  .icon-dianzan1 {
+  font-size: 28rpx;
+  color: #2D2D2D;
+  }
+  .icon-pinglun {
+  font-size: 30rpx;
+  color: #2D2D2D;
+  }
+  .icon-yanjing {
+  color: #2D2D2D;
+  font-size: 26rpx;
+  }

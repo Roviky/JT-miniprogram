@@ -1,0 +1,217 @@
+/* pages/alert2/alert2.wxss */
+page {
+    background-color: #fff;
+    padding: 20rpx;
+    padding-top: 0;
+    padding-bottom: 155rpx;
+}
+
+.empty {
+    position: relative;
+}
+
+.bg {
+    position: absolute;
+    margin-top: 180rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 480rpx;
+}
+
+.empty .text {
+    width: 575rpx;
+    position: absolute;
+    color: #4e936f;
+    font-size: 45rpx;
+    left: 50%;
+    top: 680rpx;
+    transform: translateX(-47%);
+}
+
+.show_detail {
+    display: flex;
+    align-items: center;
+    height: 120rpx;
+}
+
+.show_detail_img {
+    flex: 1;
+    width: 50rpx;
+}
+.heart_img{
+
+    background-image: url("heart.png");
+    position: absolute;
+    left: calc(5.7 * 118.11 / 4679 * 750rpx);
+    top: calc(1869 / 10150 *750rpx);
+    width: calc(2.94 * 118.11 / 4679 * 750rpx);
+    height: calc(2.55 * 118.11 / 4679 * 750rpx);
+    z-index: 473;
+      
+}
+
+.pinglun_img{
+    position: absolute;
+    left: calc(23.03 * 118.11 / 4679 * 750rpx);
+    top: calc(1869 / 10150 *750rpx);
+    width: calc(2.94 * 118.11 / 4679 * 750rpx);
+    height: calc(2.55 * 118.11 / 4679 * 750rpx);
+    z-index: 473;
+      
+}
+.bg1 {
+    position: absolute;
+    left: 0rpx;
+    top:-125rpx;
+    width: 750rpx;
+    height: calc(1500 / 10150 *750rpx);
+    z-index: -1;
+  }
+  
+
+.dianzan {
+    font-size: calc(52.259px * 0.3);
+    font-family: "FZFYSJW";
+    color: rgb(0, 0, 0);
+    line-height: 0.866;
+    position: absolute;
+    left: calc(10.58 * 118.11 / 4679 * 750rpx);
+    top: calc(16.18 * 118.11 / 10150 * 750rpx);
+    z-index: 485;
+  }
+
+  .pinglun {
+    font-size: calc(52.259px * 0.3);
+    font-family: "FZFYSJW";
+    color: rgb(0, 0, 0);
+    line-height: 0.866;
+    position: absolute;
+    left: calc(27.51 * 118.11 / 4679 * 750rpx);
+    top: calc(16.22 * 118.11 / 10150 * 750rpx);
+    z-index: 485;
+  }
+  
+  .jiantou1 {
+    position: absolute;
+    left: calc(16.13 * 118.11 / 4679 * 750rpx);
+    top: calc(16.21 * 118.11 / 10150 * 750rpx);
+    width: calc(1 * 118.11 / 4679 * 750rpx);
+    height: calc(1.79 * 118.11 / 10150 * 750rpx);
+    z-index: 488;
+  }
+
+  .jiantou2 {
+    position: absolute;
+    left: calc(32.72 * 118.11 / 4679 * 750rpx);
+    top: calc(16.21 * 118.11 / 10150 * 750rpx);
+    width: calc(1 * 118.11 / 4679 * 750rpx);
+    height: calc(1.79 * 118.11 / 10150 * 750rpx);
+    z-index: 488;
+  }
+
+
+.show_detail_text {
+    flex: 6;
+    padding-left: 37rpx;
+    display: flex;
+    align-items: center;
+    font-size: 33rpx;
+}
+
+.icon-youjiantou {
+    margin-right: 20rpx;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divLine{
+    background: #EEEDEE;
+    width: 100%;
+    height: 3rpx;
+}
+
+.chat_list_pretext {
+    /* background-color: #f3f5f9; */
+    font-family: "FZFYSJW";
+    font-size: 50rpx;
+    padding: 10rpx;
+    padding-top: 20rpx;
+    padding-bottom: 15rpx;
+    padding-left: 20rpx;
+    color: black;
+    font-weight:bold;
+}
+
+.chat_list_item {
+    position: relative;
+    display: flex;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    margin-right: 25rpx;
+    align-items: center;
+}
+
+.user_image {
+    flex: 1;
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.user_image image {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 16rpx;
+}
+
+.main_content {
+    height: 90rpx;
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 30rpx;
+}
+
+.main_content .user_name {
+    font-size: 32rpx;
+    color: black;
+}
+
+.main_content .main_content_text {
+    font-size: 28rpx;
+    /* color: #9F9F9F; */
+    color: #B7B7B7;
+
+    width: 460rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.time {
+    position: absolute;
+    color: #B5B5B5;
+    font-size: 28rpx;
+    top: 0rpx;
+    right: 12rpx;
+}
+
+.read {
+    position: absolute;
+    top: 50rpx;
+    right: 24rpx;
+    color: white;
+    font-size: 28rpx;
+    width: 32rpx;
+    height: 32rpx;
+    padding: 5rpx;
+    background-color: red;
+    border-radius: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

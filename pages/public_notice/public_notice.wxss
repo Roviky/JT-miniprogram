@@ -1,0 +1,75 @@
+page {
+    padding-bottom: 150rpx;
+    background-color: #4e936f;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-height: calc(100vh - 57px); 
+    box-sizing: border-box;
+}
+
+.background {
+    width: 100%;
+    height: 95%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    border-radius: 80rpx 80rpx 0 0;
+    z-index: -1;
+}
+
+.contain {
+    position: absolute;
+    width: 100%;
+    bottom: 115rpx;
+    height: 80%;
+    overflow: auto;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.question_item {
+    margin: 0rpx 60rpx 50rpx 60rpx
+}
+
+.question {
+    padding-left: 65rpx;
+    position: relative;
+    border-radius: 4px;
+    background-color: rgb(238, 244, 241);
+    /* border: 6rpx solid #A9EA8C; */
+    /* border-radius: 20rpx; */
+    height: 100rpx;
+    line-height: 90rpx;
+    font-size: 30rpx;
+    /* background-color: #fff; */
+    /* box-shadow: 0 0 1rpx 1rpx rgba(0, 0, 0, 0.1); */
+}
+
+.icon-fl-xinxi {
+    position: absolute;
+    left: 8rpx;
+    top: 0rpx;
+    color: #4e936f;
+    font-size: 54rpx;
+    margin-left: 20rpx;
+}
+
+.icon-xiala {
+    margin: 16rpx 0rpx;
+    color: #4e936f;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50rpx;
+}
+
+.content {
+    background-color: #4e936f;
+    padding: 20rpx;
+    margin-top: 100rpx;
+    border: 8rpx solid #4e936f;
+    border-radius: 10rpx;
+    font-size: 30rpx;
+    color: #fff;
+}

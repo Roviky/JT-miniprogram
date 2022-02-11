@@ -1,0 +1,109 @@
+<!-- 主页 -->
+<view class="body">
+    <image src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/bg.jpg" mode="widthFix" class="bg"></image>
+    <!-- 搜索框 -->
+    <view class="search_row">
+        <input bindinput="handleInput" placeholder="🔍 请输入您要搜索的帖子或用户"></input>
+        <button bindtap="handleSearch" class="btn" hidden="{{!isFocus}}">搜索</button>
+    </view>
+    <!-- <view class="divLine"></view> -->
+    <!-- 轮播图 -->
+    <!-- <view class="index_swiper">
+        <swiper autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}" interval="2000">
+            <swiper-item wx:for="{{swiperList}}" wx:key="*this">
+                <navigator url="/pages/showText/showText">
+                    <image mode="widthFix" src="{{item}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="divLine"></view> -->
+    <!-- 搜索到的用户 -->
+    <view class="search_info_text" wx:if="{{noSearch == false}}">用户列表</view>
+    <view wx:if="{{userlist.length > 0 && noSearch == false}}">
+        <view wx:for="{{userlist}}" wx:key="user_id">
+            <view class="divLine"></view>
+            <!-- 用户的信息 -->
+            <view class="user_list_item" bindtap="showUser" data-userid="{{item.user_id}}">
+                <view class="user_list_img">
+                    <image src="{{item.user_avatar_url}}"></image>
+                </view>
+                <view class="user_list_text">{{item.user_name}}</view>
+            </view>
+        </view>
+    </view>
+    <view wx:elif="{{noSearch == false}}" class="show_no_answer">
+        没有相关结果
+    </view>
+    <view wx:else></view>
+    <!-- 帖子 -->
+    <view class="search_info_text" wx:if="{{noSearch == false}}">帖子列表</view>
+    <view wx:if='{{commentLoaded}}'>
+        <view wx:for="{{postlist}}" wx:key="_id">
+            <!-- <view class="divLine"></view> -->
+            <!-- 下面传递的这个id是数据库自动添加的用来表示不同帖子的id -->
+            <view class='post_list' bindtap='onItemClick' data-postid='{{item._id}}'>
+                <view class='title_area'>
+                    <!-- 头像 -->
+                    <view class='avatar_area' catchtap="showUser" data-userid="{{item.author_id}}">
+                        <image class='avatar' src='{{item.author_avatar_url}}' />
+                    </view>
+                    <!-- 用户名 + 时间 -->
+                    <view class='text_area'>
+                        <view>
+                            <text class='author_name'>{{item.author_name}}</text>
+                        </view>
+                        <view class='publish_time'>
+                            <text class='publish_time'>打卡减碳{{item.carbon_reduction}}kg</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- <view wx:if="{{item.theme == '公交'}}" class="transport iconfont icon-gongjiaoche"></view>
+                <view wx:elif="{{item.theme == '骑行'}}" class="transport iconfont icon-zixingche"></view>
+                <view wx:elif="{{item.theme == '步行'}}" class="transport iconfont icon-buxing"></view>
+                <view wx:elif="{{item.theme == '地铁'}}" class="transport iconfont icon-ditie"></view>
+                <view wx:else></view>
+                <view class="theme" catchtap="showClassDetail" data-theme="{{item.theme}}">
+                    {{item.carbon_reduction}} kg
+                </view> -->
+                <view class="time_show">{{item.publish_time}}</view>
+                <view class="post_swiper" wx:if="{{item.image_url.length >= 1}}">
+                    <swiper autoplay="{{false}}" indicator-dots="{{true}}">
+                        <swiper-item wx:for="{{item.image_url}}" wx:key="*this" wx:for-index="index2" wx:for-item="item2" catchtap="previewImage" data-url="{{item2}}" data-list="{{item.image_url}}">
+                            <image mode="aspectFill" src="{{item2}}"></image>
+                        </swiper-item>
+                    </swiper>
+                </view>
+                <view>
+                    <text class='title'>{{item.content}}</text>
+                </view>
+                <!-- <view class="image_area" wx:if="{{item.image_url.length >= 1}}">
+                    <view class="img" wx:for="{{item.image_url}}" wx:key="*this" wx:for-index="index2" wx:for-item="item2" catchtap="previewImage" data-url="{{item2}}" data-list="{{item.image_url}}">
+                        <image src="{{item2}}"></image>
+                    </view>
+                    <text wx:if="{{item.image_url.length >= 4}}" class="iconfont icon-shenglvehao"></text>
+                </view> -->
+                <view class="comment_area" wx:if="{{item.commentlist.length !=0}}">
+                    <view wx:for="{{item.commentlist}}" wx:key='_id' wx:for-index="index2" wx:for-item="item2">
+                        <view class="comment_line">
+                            <view class="comment_user_name">{{item2.name}}</view>
+                            <view class="comment_comment">{{item2.content}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="layout_horizontal">
+                    <input value="{{inputValue}}" catchtap="down"  placeholder="评论..." confirm-type="send" bindconfirm="sendComment" data-postid="{{item._id}}" data-authorid="{{item.author_id}}"
+                    data-content="{{item.content}}" data-image_url="{{item.image_url}}" data-index="{{index}}"></input>
+                    <text class="iconfont icon-aixin"></text>
+                    <text class='extra_info'>{{item.star_count}}</text>
+                    <text class="iconfont icon-pinglun"></text>
+                    <text class='extra_info'>{{item.comment_count}}</text>
+                    <text class="iconfont icon-yanjing"></text>
+                    <text class='extra_info'>{{item.watch_count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- TODO 如何使用MinUI提供的组件库 -->
+    <image class="new_post" bindtap="newPost" src='cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/tianjiatianchong.png' mode="widthFix"></image>
+</view>

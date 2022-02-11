@@ -1,0 +1,11 @@
+<!-- 自定义的 tabber组件 -->
+<view class="tab-bar">
+  <!-- 上面的横线 -->
+  <view class="tab-bar-border"></view>
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item {{item.heigher?'add':''}}" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <image class="img" src="{{selected === index ? item.selectedIconPath : item.iconPath}}" mode="widthFix"></image>
+    <view class="text" style="color: {{selected === index ? selectedColor : color}}">
+      {{item.text}}
+    </view>
+  </view>
+</view>

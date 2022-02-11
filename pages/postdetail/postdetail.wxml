@@ -1,0 +1,92 @@
+<view class='postdetail' wx:if='{{contentLoaded && imagesLoaded && commentLoaded}}'>
+    <!-- 用户头像，用户名，发表时间 -->
+    <view class='title_area'>
+        <!-- 头像 -->
+        <view class='avatar_area' catchtap="showUser" data-userid="{{detail.author_id}}">
+            <image class='avatar' src='{{detail.author_avatar_url}}' />
+        </view>
+        <!-- 用户名 + 时间 -->
+        <view class='text_area'>
+            <view>
+                <text class='author_name'>{{detail.author_name}}</text>
+            </view>
+            <view class='publish_time'>
+                <text class='publish_time'>发表于{{detail.publish_time}}</text>
+            </view>
+        </view>
+        <view wx:if="{{detail.theme == '公交'}}" class="transport iconfont icon-gongjiaoche"></view>
+        <view wx:elif="{{detail.theme == '骑行'}}" class="transport iconfont icon-zixingche"></view>
+        <view wx:elif="{{detail.theme == '步行'}}" class="transport iconfont icon-buxing"></view>
+        <view wx:elif="{{detail.theme == '地铁'}}" class="transport iconfont icon-ditie"></view>
+        <view wx:else></view>
+        <!-- 主题 -->
+        <view class="theme">{{detail.carbon_reduction}} kg</view>
+    </view>
+    <!-- 文字和图片 -->
+    <view class='content'>
+        <view class='text'>
+            <text>{{detail.content}}</text>
+        </view>
+        <view class="image_area">
+            <view wx:for="{{imageUrls}}" wx:key="*this" bindtap="previewImage" data-url="{{item}}" class="img">
+                <image src="{{item}}" mode='aspectFill'></image>
+            </view>
+        </view>
+    </view>
+    <!-- 评论 -->
+    <view class="data-view">
+        <text class="data" decode="true">
+            收藏&nbsp;{{collect_count}}&nbsp;&nbsp;&nbsp;评论&nbsp;{{comment_count}}&nbsp;&nbsp;&nbsp;浏览数&nbsp;{{watch_count}}
+        </text>
+    </view>
+    <!-- 点赞的用户头像 -->
+    <view class="user_images" wx:if="{{collect_count > 0}}">
+        <view class="iconfont icon-aixin"></view>
+        <view wx:for="{{like_users}}" class="user_images_area">
+            <image src="{{item.user_avatar}}" catchtap="showUser" data-userid="{{item.user_id}}"></image>
+        </view>
+    </view>
+    <view class='all_comment' style='background: #EDEDED' wx:if='{{imagesLoaded}}'>
+        <text class='all_comment_text'>全部评论</text>
+    </view>
+    <!-- 评论列表 -->
+    <view class='all_comment_list' wx:if="{{comment_count > 0}}">
+        <view class='comment_list' wx:for="{{comments}}" wx:key="_id">
+            <view class='comment_item'>
+                <view class='comment_item_head'>
+                    <view class='avatar_area' catchtap="showUser" data-userid="{{item.openid}}">
+                        <image class="userinfo-avatar avatar" src="{{item.avatarUrl}}" background-size="cover"></image>
+                    </view>
+                    <view class='text_area'>
+                        <view>
+                            <text class='comment_author_name'>{{item.name}}</text>
+                        </view>
+                        <view class='publish_time'>
+                            <text class='publish_time'>发表于{{item.time}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='comment_content'>{{item.content}}</view>
+            </view>
+            <view class='divLine' wx:if='{{index < comments.length-1}}'></view>
+        </view>
+    </view>
+    <!-- 评论框 -->
+    <view class='send_comment_container'>
+        <!-- 输入框需要两种样式 -->
+        <input bindfocus="handleFocus" bindblur="handleBlur" class="{{isFocus?'input1':'input2'}}" value='{{comment_value}}' bindinput='input' placeholder="请输入你的看法" />
+        <view wx:if="{{isFocus}}" class='send' bindtap='sendComment'>发送</view>
+        <view wx:else class="no_focus">
+            <view class="item" bindtap="handleCollect">
+                <text class="iconfont  {{isCollect?'icon-aixin2':'icon-aixin'}} "></text>
+                <view class="collect_text">点赞</view>
+            </view>
+            <view class="item">
+                <text class="iconfont icon-iconfontfenxiang"></text>
+                <view class="collect_text">转发</view>
+                <!-- 障眼法 需要定位和opacity -->
+                <button open-type="share"></button>
+            </view>
+        </view>
+    </view>
+</view>

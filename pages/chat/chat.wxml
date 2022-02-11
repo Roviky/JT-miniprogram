@@ -1,0 +1,45 @@
+<view class="search_row">
+    <view class="iconfont icon-tianjia1" bindtap="chooseImg"></view>
+    <textarea cursor-spacing="42rpx" class="{{img_url.length > 0 ?'textarea1':'textarea2'}}" auto-height="{{true}}" value="{{inputValue}}" bindinput="handleInput" placeholder="说点什么...">
+        <!-- 图片 -->
+        <view class="image_content" wx:if="{{img_url.length > 0}}">
+            <view class='image' wx:for="{{img_url}}" wx:key="*this">
+                <image bindtap="handlePreview" data-url="{{item}}" class="moment_img" src="{{item}}"></image>
+                <icon bindtap="handleRemove" data-index="{{index}}" type="clear" size="22" color="red"></icon>
+            </view>
+        </view>
+    </textarea>
+    <button bindtap="handleSend" class="btn" hidden="{{!isFocus}}">发送</button>
+</view>
+<view style="margin-bottom: {{height}}">
+    <view wx:for="{{chat_list}}" wx:key="{{item.content}}">
+        <view class="show_time" wx:if="{{item.contentFlag == 3}}">
+            {{item.time}}
+        </view>
+        <!-- 我发的 -->
+        <view wx:elif="{{item.authorFlag == 0}}" class="my_part">
+            <image class="user_image" src="{{myInfo.avatarUrl}}"></image>
+            <!-- 文字 -->
+            <view class="content" wx:if="{{item.contentFlag == 0}}">
+                {{item.content}}
+                <view class="triangle"></view>
+            </view>
+            <!-- 图片 -->
+            <view bindtap="handlePreview1" data-url="{{item.content}}" class="content_image" wx:elif="{{item.contentFlag == 1}}">
+                <image class="" src="{{item.content}}" mode="widthFix"></image>
+            </view>
+        </view>
+        <!-- 对面发的 -->
+        <view wx:else class="his_part">
+            <image class="user_image" src="{{othersAvatar}}"></image>
+            <view class="content" wx:if="{{item.contentFlag == 0}}">
+                {{item.content}}
+                <view class="triangle"></view>
+            </view>
+            <!-- 图片 -->
+            <view bindtap="handlePreview1" data-url="{{item.content}}" class="content_image" wx:elif="{{item.contentFlag == 1}}">
+                <image class="" src="{{item.content}}" mode="widthFix"></image>
+            </view>
+        </view>
+    </view>
+</view>

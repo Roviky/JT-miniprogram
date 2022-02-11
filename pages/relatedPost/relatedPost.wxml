@@ -1,0 +1,46 @@
+<view wx:for="{{postlist}}" wx:key="_id">
+    <view wx:if="{{limit.length==0 || limit==item.theme}}" class="divLine"></view>
+    <!-- 下面传递的这个id是数据库自动添加的用来表示不同帖子的id -->
+    <view wx:if="{{limit.length==0 || limit==item.theme}}" class='post_list' bindtap='onItemClick' data-postid='{{item._id}}'>
+        <view class='title_area'>
+            <!-- 头像 -->
+            <view class='avatar_area' catchtap="showUser" data-userid="{{item.author_id}}">
+                <image class='avatar' src='{{item.author_avatar_url}}' />
+            </view>
+            <!-- 用户名 + 时间 -->
+            <view class='text_area'>
+                <view>
+                    <text class='author_name'>{{item.author_name}}</text>
+                </view>
+                <view class='publish_time'>
+                    <text class='publish_time'>发表于{{item.publish_time}}</text>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{item.theme == '公交'}}" class="transport iconfont icon-gongjiaoche"></view>
+        <view wx:elif="{{item.theme == '骑行'}}" class="transport iconfont icon-zixingche"></view>
+        <view wx:elif="{{item.theme == '步行'}}" class="transport iconfont icon-buxing"></view>
+        <view wx:elif="{{item.theme == '地铁'}}" class="transport iconfont icon-ditie"></view>
+        <view wx:else></view>
+        <view class="theme" catchtap="showClassDetail" data-theme="{{item.theme}}">
+            {{item.carbon_reduction}} kg
+        </view>
+        <view>
+            <text class='title'>{{item.content}}</text>
+        </view>
+        <view class="image_area" wx:if="{{item.image_url.length >= 1}}">
+            <view class="img" wx:for="{{item.image_url}}" wx:key="*this" wx:for-index="index2" wx:for-item="item2" catchtap="previewImage" data-url="{{item2}}" data-list="{{item.image_url}}">
+                <image src="{{item2}}"></image>
+            </view>
+            <text wx:if="{{item.image_url.length >= 4}}" class="iconfont icon-shenglvehao"></text>
+        </view>
+        <view class="layout_horizontal">
+            <text class="iconfont icon-dianzan1"></text>
+            <text class='extra_info'>{{item.star_count}}</text>
+            <text class="iconfont icon-pinglun"></text>
+            <text class='extra_info'>{{item.comment_count}}</text>
+            <text class="iconfont icon-yanjing"></text>
+            <text class='extra_info'>{{item.watch_count}}</text>
+        </view>
+    </view>
+</view>

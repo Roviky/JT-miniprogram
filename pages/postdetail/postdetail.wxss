@@ -1,0 +1,261 @@
+
+page {
+    padding: 15rpx 15rpx 150rpx 15rpx;
+  }
+
+  .transport {
+    position: absolute;
+    right: 145rpx;
+    top: 10rpx;
+    color: #8DCBF9;
+    font-size: 50rpx;
+  }
+  
+  .icon-zixingche {
+    font-size: 58rpx;
+  }  
+  
+  .theme {
+    position: absolute;
+    right: 39rpx;
+    top: 9rpx;
+    border: 2rpx solid #8DCBF9;
+    background-color: #8DCBF9;
+    color: white;
+    font-size: 28rpx;
+    border-radius: 12rpx;
+    padding: 12rpx;
+  }
+
+  .title_area{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .avatar{
+    width: 80rpx;
+    height: 80rpx;
+  }
+  
+  .text_area {
+    margin-left: 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .publish_time{
+    font-size: 8pt;
+    color: gray;
+    margin-top: 1rpx;
+  }
+  
+  .content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15rpx;
+    padding-right: 10rpx;
+  }
+  
+  .text{
+    margin-left: 12rpx;
+    margin-bottom: 12rpx;
+    font-size: 35rpx;
+  }
+  
+  .image_area{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 12rpx;
+  }
+  
+  .image_area .img {
+    width: 32%;
+    height: 200rpx;
+    overflow: hidden;
+    margin: 8rpx;
+    margin-right: 0;
+  }
+  
+  .image_area .img image {
+    width: 200rpx;
+    height: 200rpx;
+  }
+  
+  .data-view {
+    position: relative;
+    height: 65rpx;
+  }
+  
+  .data {
+    position: absolute;
+    top: -20rpx;
+    right: 20rpx;
+    font-size: 28rpx;
+    color: #ccc;
+  }
+  
+  .all_comment{
+    position: relative;
+    padding-bottom: 10rpx;
+    padding-top: 10rpx;
+    padding-left: 15rpx;
+  }
+  
+  .all_comment_text{
+    font-size: 30rpx;
+    color: gray;
+  }
+  
+  .all_comment_list{
+    position: relative;
+    margin-bottom: 90rpx;
+  }
+  
+  .comment_item{
+    padding-top: 20rpx;
+    padding-bottom: 15rpx;
+  }
+  
+  .comment_item_head{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .comment_author_name{
+    font-size: 12pt;
+  }
+  
+  .comment_content{
+    font-size: 12pt;
+    padding-top: 12rpx;
+    padding-left: 10rpx;
+  }
+  
+  .divLine{
+    background: #EEEDEE;
+    width: 100%;
+    height: 5rpx;
+  }
+  
+  .send_comment_container {
+    /* 固定定位 */
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      border-top: 5rpx solid #ddd;
+      margin-top: 34rpx;
+      margin-bottom: 8rpx;
+  
+      display: flex;
+      align-items: center; /*底部对齐*/
+      justify-content: center; /*两端对齐*/
+      
+      width: 100%;
+      height: 100rpx;
+      background-color: #feffff;
+  }
+  
+  .send_comment_container .input1 {
+    flex: 7;
+    height: 75%;
+    line-height: 75rpx;
+    font-size: 28rpx;
+    background-color: #f3f8f9;
+    border-radius: 30rpx;
+    padding-left: 36rpx;
+    margin: 0 30rpx;
+  }
+  
+  
+  .send_comment_container .input2 {
+    flex: 5;
+    height: 75%;
+    line-height: 75rpx;
+    font-size: 28rpx;
+    background-color: #f3f8f9;
+    border-radius: 30rpx;
+    padding-left: 36rpx;
+    margin: 0 30rpx;
+  }
+  
+  .send {
+    flex: 2;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    color: black;
+    font-size: 32rpx;
+    font-weight: bold;
+  }
+  
+  .send_comment_container .no_focus {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .send_comment_container .item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1rpx solid #ccc;
+  }
+  
+  .send_comment_container .item button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .send_comment_container .icon-aixin2 {
+    color: orangered;
+  }
+
+  .user_images {
+    position: relative;
+    background-color: #f3f8f9;
+    padding: 10rpx 60rpx;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .user_images_area {
+    margin: 5rpx 8rpx;
+  }
+
+  .user_images image {
+    width: 76rpx;
+    height: 76rpx;
+    border-radius: 8rpx;
+  }
+
+  .user_images .icon-aixin {
+    position: absolute;
+    top: 39rpx;
+    left: 12rpx;
+    font-size: 42rpx;
+    font-weight: bolder;
+    color: #838CA5;
+  }
+
+  .icon-pinglun1 {
+    position: absolute;
+    top: 10rpx;
+    left: 12rpx;
+    font-size: 36rpx;
+    font-weight: bolder;
+    color: #838CA5;
+  }

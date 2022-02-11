@@ -1,0 +1,280 @@
+<!-- 我的评论 + 我的帖子 + 我的收藏 -->
+
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+        <!-- 今日减排 -->
+        <view class="today">
+            <view class="up_part">
+                <view class="showdate">今日减碳</view>
+                <view class="date">{{timeStrDay}}</view>
+                <view bindtap="showRelatedPost" data-flag="{{0}}" data-limit="" class="showpost iconfont icon-youjiantou"></view>
+            </view>
+            <view class="middle_part">
+                <!-- 减碳 -->
+                <view class="middle_1">减碳量</view>
+                <!-- 具体数目 -->
+                <view class="middle_2">{{userInfo.day_data.carbon_reduction}}   kg</view>
+                <!-- 点赞 -->
+                <view class="middle_3">
+                    <view class="star_count">{{userInfo.day_data.like_num}}</view>
+                    <view bindtap="handleCollect" data-flag="{{0}}" class="iconfont icon-aixin2 {{isCollectDay ? 'redIcon' : 'grayIcon'}}"></view>
+                </view>
+            </view>
+            <view class="down_part">
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="公交">
+                    <view class="iconfont icon-gongjiaoche"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">公交</view>
+                        <view class="trans_info">{{userInfo.day_data.bus_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="步行">
+                    <view class="iconfont icon-buxing"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">步行</view>
+                        <view class="trans_info">{{userInfo.day_data.walk_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="骑行">
+                    <view class="iconfont icon-zixingche"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">骑行</view>
+                        <view class="trans_info">{{userInfo.day_data.bike_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="地铁">
+                    <view class="iconfont icon-ditie"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">地铁</view>
+                        <view class="trans_info">{{userInfo.day_data.subway_mile}}km</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 本周减排 -->
+        <view class="today">
+            <view class="up_part">
+                <view class="showdate">本周减碳</view>
+                <view class="date">{{timeStrWeek}}</view>
+                <view bindtap="showRelatedPost" data-flag="{{1}}" data-limit="" class="showpost iconfont icon-youjiantou"></view>
+            </view>
+            <view class="middle_part">
+                <!-- 减碳 -->
+                <view class="middle_1">减碳量</view>
+                <!-- 具体数目 -->
+                <view class="middle_2">{{userInfo.week_data.carbon_reduction}}   kg</view>
+                <!-- 点赞 -->
+                <view class="middle_3">
+                    <view class="star_count">{{userInfo.week_data.like_num}}</view>
+                    <view bindtap="handleCollect" data-flag="{{1}}" class="iconfont icon-aixin2 {{isCollectWeek ? 'redIcon' : 'grayIcon'}}"></view>
+                </view>
+            </view>
+            <view class="down_part">
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="公交">
+                    <view class="iconfont icon-gongjiaoche"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">公交</view>
+                        <view class="trans_info">{{userInfo.week_data.bus_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="步行">
+                    <view class="iconfont icon-buxing"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">步行</view>
+                        <view class="trans_info">{{userInfo.week_data.walk_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="骑行">
+                    <view class="iconfont icon-zixingche"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">骑行</view>
+                        <view class="trans_info">{{userInfo.week_data.bike_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="地铁">
+                    <view class="iconfont icon-ditie"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">地铁</view>
+                        <view class="trans_info">{{userInfo.week_data.subway_mile}}km</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 总共减排 -->
+        <view class="today">
+            <view class="up_part">
+                <view class="showdate">总共减碳</view>
+                <view bindtap="showRelatedPost" data-flag="{{2}}" data-limit="" class="showpost iconfont icon-youjiantou"></view>
+            </view>
+            <view class="middle_part">
+                <!-- 减碳 -->
+                <view class="middle_1">减碳量</view>
+                <!-- 具体数目 -->
+                <view class="middle_2">{{userInfo.total_data.carbon_reduction}}   kg</view>
+                <!-- 点赞 -->
+                <view class="middle_3">
+                    <view class="star_count">{{userInfo.total_data.like_num}}</view>
+                    <view bindtap="handleCollect" data-flag="{{2}}" class="iconfont icon-aixin2 {{isCollectTotal ? 'redIcon' : 'grayIcon'}}"></view>
+                </view>
+            </view>
+            <view class="down_part">
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="公交">
+                    <view class="iconfont icon-gongjiaoche"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">公交</view>
+                        <view class="trans_info">{{userInfo.week_data.bus_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="步行">
+                    <view class="iconfont icon-buxing"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">步行</view>
+                        <view class="trans_info">{{userInfo.week_data.walk_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="骑行">
+                    <view class="iconfont icon-zixingche"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">骑行</view>
+                        <view class="trans_info">{{userInfo.week_data.bike_mile}}km</view>
+                    </view>
+                </view>
+                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="地铁">
+                    <view class="iconfont icon-ditie"></view>
+                    <view class="mileCount">
+                        <view class="trans_info">地铁</view>
+                        <view class="trans_info">{{userInfo.week_data.subway_mile}}km</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{tabs[1].isActive}}">
+        <view wx:if="{{post_list.length > 0}}">
+            <view wx:for="{{post_list}}" wx:key="_id">
+                <!-- 下面传递的这个id是数据库自动添加的用来表示不同帖子的id -->
+                <view class='post_list' bindtap='onItemClick' data-postid='{{item._id}}'>
+                    <view class='title_area'>
+                        <!-- 头像 -->
+                        <view class='avatar_area'>
+                            <image class='avatar' src='{{item.author_avatar_url}}' />
+                        </view>
+                        <!-- 用户名 + 时间 -->
+                        <view class='text_area'>
+                            <view>
+                                <text class='author_name'>{{item.author_name}}</text>
+                            </view>
+                            <view class='publish_time'>
+                                <text class='publish_time'>发表于{{item.publish_time}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view>
+                        <text class='title'>{{item.content}}</text>
+                    </view>
+                    <view class="image_area" wx:if="{{item.image_url.length >= 1}}">
+                        <view class="img" wx:for="{{item.image_url}}" wx:key="*this" wx:for-index="index2" wx:for-item="item2" catchtap="previewImage" data-url="{{item2}}" data-list="{{item.image_url}}">
+                            <image src="{{item2}}"></image>
+                        </view>
+                        <text wx:if="{{item.image_url.length >= 4}}" class="iconfont icon-shenglvehao"></text>
+                    </view>
+                    <view class="layout_horizontal">
+                        <text class="iconfont icon-dianzan1"></text>
+                        <text class='extra_info'>{{item.star_count}}</text>
+                        <text class="iconfont icon-pinglun"></text>
+                        <text class='extra_info'>{{item.comment_count}}</text>
+                        <text class="iconfont icon-yanjing"></text>
+                        <text class='extra_info'>{{item.watch_count}}</text>
+                    </view>
+                    <!-- 清空的按钮 -->
+                    <text class="iconfont icon-qingkongshanchu" catchtap="removePost" data-id="{{item._id}}" data-images="{{item.image_url}}"></text>
+                </view>
+                <view class="divLine"></view>
+            </view>
+        </view>
+        <view wx:else class="empty">
+            <image class="bg" src="../../images/empty.png" mode="widthFix"></image>
+            <view class="text">您还没有发布帖子哦～</view>
+        </view>
+    </block>
+    <block wx:if="{{tabs[2].isActive}}">
+        <view wx:if="{{collect_list.length > 0}}">
+            <view wx:for="{{collect_list}}" wx:key="_id">
+                <!-- 下面传递的这个id是数据库自动添加的用来表示不同帖子的id -->
+                <view class='post_list' bindtap='onItemClick' data-postid='{{item._id}}'>
+                    <view class='title_area'>
+                        <!-- 头像 -->
+                        <view class='avatar_area'>
+                            <image class='avatar' src='{{item.author_avatar_url}}' />
+                        </view>
+                        <!-- 用户名 + 时间 -->
+                        <view class='text_area'>
+                            <view>
+                                <text class='author_name'>{{item.author_name}}</text>
+                            </view>
+                            <view class='publish_time'>
+                                <text class='publish_time'>发表于{{item.publish_time}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view>
+                        <text class='title'>{{item.content}}</text>
+                    </view>
+                    <view class="image_area" wx:if="{{item.image_url.length >= 1}}">
+                        <view class="img" wx:for="{{item.image_url}}" wx:key="*this" wx:for-index="index2" wx:for-item="item2" catchtap="previewImage" data-url="{{item2}}" data-list="{{item.image_url}}">
+                            <image src="{{item2}}"></image>
+                        </view>
+                        <text wx:if="{{item.image_url.length >= 4}}" class="iconfont icon-shenglvehao"></text>
+                    </view>
+                    <view class="layout_horizontal">
+                        <text class="iconfont icon-dianzan1"></text>
+                        <text class='extra_info'>{{item.star_count}}</text>
+                        <text class="iconfont icon-pinglun"></text>
+                        <text class='extra_info'>{{item.comment_count}}</text>
+                        <text class="iconfont icon-yanjing"></text>
+                        <text class='extra_info'>{{item.watch_count}}</text>
+                    </view>
+                    <!-- 取消收藏的按钮 -->
+                    <text class="iconfont icon-aixin2 cancel_collect" catchtap="removeCollect" data-postid="{{item._id}}"></text>
+                </view>
+                <view class="divLine"></view>
+            </view>
+        </view>
+        <view wx:else class="empty">
+            <image class="bg" src="../../images/empty.png" mode="widthFix"></image>
+            <view class="text">您还没有收藏帖子哦～</view>
+        </view>
+    </block>
+    <block wx:if="{{tabs[3].isActive}}">
+        <view class='all_comment_list' wx:if="{{comment_list.length > 0}}">
+            <view class='comment_list' wx:for="{{comment_list}}" wx:key="_id">
+                <view class='comment_item' bindtap="onItemClick" data-postid='{{item.postid}}'>
+                    <view class='comment_item_head'>
+                        <view class='avatar_area'>
+                            <image class="userinfo-avatar avatar" src="{{item.avatarUrl}}" background-size="cover"></image>
+                        </view>
+                        <view class='text_area'>
+                            <view>
+                                <text class='comment_author_name'>{{item.name}}</text>
+                            </view>
+                            <view class='publish_time'>
+                                <text class='publish_time'>发表于{{item.time}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='comment_content'>
+                        <text>{{item.content}}</text>
+                    </view>
+                    <text class="showInfo">点击查看帖子</text>
+                    <!-- 清空的按钮 -->
+                    <text class="iconfont icon-qingkongshanchu" catchtap="removeComment" data-id="{{item._id}}" data-postId="{{item.postid}}"></text>
+                </view>
+                <view class='divLine1'></view>
+            </view>
+        </view>
+        <view wx:else class="empty">
+            <image class="bg" src="../../images/empty.png" mode="widthFix"></image>
+            <view class="text">您还没有评论过哦～</view>
+        </view>
+    </block>
+</Tabs>

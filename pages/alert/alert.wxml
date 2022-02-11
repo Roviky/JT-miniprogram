@@ -1,0 +1,41 @@
+<!--pages/alert2/alert2.wxml-->
+<image mode="widthFix" class="bg1" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/img2/bg1.png"></image>
+<view>
+    <view class="show_detail" bindtap="showAlertDetail" data-pageid="{{0}}">
+    <image mode="widthFix" class="heart_img" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/img2/heart.png"></image>
+        <view class="dianzan">点赞</view>
+        <image mode="widthFix" class="jiantou1" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/img2/Rounded.png"></image>
+    </view>
+
+    <view class="show_detail" bindtap="showAlertDetail" data-pageid="{{1}}">
+        <image mode="widthFix" class="pinglun_img" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/img2/pinglun.png"></image>
+        <view class="pinglun">评论</view>
+        <image mode="widthFix" class="jiantou2" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/img2/Rounded.png"></image>
+    </view>
+
+</view>
+
+<view wx:if="{{userInfo.avatarUrl}}">
+        <view class="chat_list_pretext">聊天</view>
+        <!-- 聊天记录 -->
+        <view wx:if="{{chat_list.length > 0}}">
+            <view wx:for="{{chat_list}}" wx:key="toId">
+                <view class="chat_list_item" bindtap="showChatDetail" data-userid="{{item.toId}}" data-useravatar="{{item.toAvatar}}" data-username="{{item.toName}}">
+                    <view class="user_image">
+                        <image src="{{item.toAvatar}}"></image>
+                    </view>
+                    <view class="main_content">
+                        <view class="user_name">{{item.toName}}</view>
+                        <view class="main_content_text">{{item.lastMsg}}</view>
+                    </view>
+                    <view class="time">{{item.updateTime}}</view>
+                    <view class="read" wx:if="{{item.unRead != 0}}">{{item.unRead}}</view>
+                </view>
+                <view class="divLine"></view>
+            </view>
+        </view>
+        <view wx:else class="empty">
+            <image class="bg" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/empty.png" mode="widthFix"></image>
+            <view class="text">您还没有和别人聊过天哦～</view>            
+        </view>
+</view>
