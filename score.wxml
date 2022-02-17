@@ -1,0 +1,19 @@
+<view class="user_info_wrap">
+
+    <view class="user_pic_wrap">
+    <image class="user_pic" src="/images/wode.png" alt="用户头像图片"></image>
+    </view>
+    <view class="user_name">
+    VII的碳征信
+    </view>
+</view>
+
+<view class="score_wrap">
+    <view class="score" style="background-image: url('/images/score_wrap.png')">
+    114
+    </view>
+    <navigator class="score_detail">
+    了解分数 <span class="black_font">></span>
+    </navigator>
+</view>
+

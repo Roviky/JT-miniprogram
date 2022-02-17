@@ -13,7 +13,8 @@
     "pages/mydetail/mydetail",
     "pages/relatedPost/relatedPost",
     "pages/showWhoLike/showWhoLike",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/score/score"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -1,0 +1,69 @@
+/* pages/score/score.wxss */
+/* pages/user2/user2.wxss */
+  page {
+    background-color: #4e936f;   
+}
+
+.user_info_wrap{
+  background-color: #4e936f;   
+  width: 100%;
+  height:calc(27vh);
+}
+
+.user_pic_wrap{
+  width: 100%;
+  text-align: center;
+  margin-top:calc(5vh);
+}
+
+.user_pic{
+  width:75px;
+  height:75px;
+  border-radius:50%;
+}
+
+.user_name{
+  width: 100%;
+  text-align: center;
+  color:white;
+  font-size: 20px;
+  font-family:"华文中宋";
+
+  padding-top: calc(4vh);
+  padding-bottom: calc(3vh);
+}
+
+.score_wrap{
+  background-color: #f3f5f9;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  height:calc(73vh);
+  overflow: hidden;
+}
+
+.score{
+  text-align: center;
+  font-size:45px;
+  color:#4e936f;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: calc(14vh);
+  padding-top:30px;
+  padding-bottom: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.score_detail{
+  text-align: center;
+  color: #4e936f;
+  font-size: 15px;
+  font-family:"华文中宋";
+  margin-top: calc(3vh);
+}
+.black_font{
+  color: black;
+}
