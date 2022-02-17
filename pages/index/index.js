@@ -1,3 +1,75 @@
+
+//獲取應用實例
+var app = getApp
+Page({
+  data: {
+
+    //用户个人信息
+    
+       userInfo:{
+    
+          avatarUrl:"",//用户头像
+    
+          nickName:"",//用户昵称
+    
+          }
+    
+       },
+    /**
+    *点击添加地址事件
+    */
+    
+    add_address_fun:function(){
+    
+      wx.navigateTo({
+    
+         url: 'add_address/add_address',
+    
+      })
+    
+    },
+    
+    
+    /**
+    * 生命周期函数--监听页面加载
+    */
+    
+    onLoad: function (options) {
+    
+    var that=this;
+    
+    /**
+    * 获取用户信息
+    */
+    
+    wx.getUserInfo({
+    
+       success:function(res){
+    
+          console.log(res);
+    
+          var avatarUrl = 'userInfo.avatarUrl';
+    
+          var nickName = 'userInfo.nickName';
+    
+          that.setData({
+    
+              [avatarUrl]: res.userInfo.avatarUrl,
+    
+              [nickName]:res.userInfo.nickName,
+    
+          })
+    
+       }
+    
+    })
+    
+    }
+
+})
+
+
+/*
 // 帖子列表的展示页面
 const util = require('../../utils/util.js');
 
@@ -114,7 +186,7 @@ Page({
         wx.hideLoading();
       })
   },
-
+/*
   // 分页获取数据
   refresh: function (flag) {
     // flag = 0表示刷新，获取前几个就行
@@ -240,8 +312,9 @@ Page({
         })
     }
     
-  },
-
+  },  
+  */
+/*
   onLoad() {
     // 更新标志
     wx.setStorageSync('updateFlag', true);
@@ -256,7 +329,7 @@ Page({
       })
     }
     // 如果有用户的信息
-    if (wx.getStorageSync('userInfo')) {
+    //if (wx.getStorageSync('userInfo')) {
       const updateFlag = wx.getStorageSync('updateFlag')
       console.log('本地存储有用户的数据');
       if (updateFlag) {
@@ -266,14 +339,14 @@ Page({
         })
         wx.startPullDownRefresh();
       }
-    }
-    else {
-      console.log('本地存储没有用户的数据');
+    //}
+   // else {
+    //  console.log('本地存储没有用户的数据');
       // 跳转到授权页面 
-      wx.switchTab({
-        url: '/pages/user/user',
-      })
-    }
+   //   wx.switchTab({
+    //    url: '/pages/user/user',
+    //  })
+   // }
   },
 
   // 下拉刷新
@@ -462,3 +535,4 @@ Page({
         })
 },
 })
+*/
