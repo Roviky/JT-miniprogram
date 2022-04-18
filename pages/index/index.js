@@ -73,6 +73,11 @@ Page({
         console.log('查询帖子信息成功', res);
         let postlist = res.data || []
 
+        postlist.forEach((v, index_iter) => {
+          v.publish_time = util.formatTimeHourMinute(new Date(v.publish_time))
+          v.imgLen = v.image_url.length
+          v.carbon_reduction = v.carbon_reduction.toFixed(1)
+        })
         // 再去查询用户信息
         db.collection('user_collection_jt')
           .where({
@@ -203,6 +208,7 @@ Page({
           data.forEach((v, index_iter) => {
             v.publish_time = util.formatTimeHourMinute(new Date(v.publish_time))
             v.imgLen = v.image_url.length
+            v.carbon_reduction = v.carbon_reduction.toFixed(1)
             // console.log('获取'+ v._id + '的评论')
             wx.cloud.callFunction({
                 name: 'get_comment_for_post_jt',

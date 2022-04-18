@@ -32,32 +32,36 @@
                 </view>
             </view>
             <view class="down_part">
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="公交">
-                    <view class="iconfont icon-gongjiaoche"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">公交</view>
-                        <view class="trans_info">{{userInfo.day_data.bus_mile}}km</view>
+                <view class="down_part_up">
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="公交">
+                        <view class="iconfont icon-gongjiaoche"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">公交</view>
+                            <view class="trans_info">{{userInfo.day_data.bus_mile}}km</view>
+                        </view>
+                    </view>
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="步行">
+                        <view class="iconfont icon-buxing"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">步行</view>
+                            <view class="trans_info">{{userInfo.day_data.walk_mile}}km</view>
+                        </view>
                     </view>
                 </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="步行">
-                    <view class="iconfont icon-buxing"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">步行</view>
-                        <view class="trans_info">{{userInfo.day_data.walk_mile}}km</view>
+                <view class="down_part_down">
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="骑行">
+                        <view class="iconfont icon-zixingche"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">骑行</view>
+                            <view class="trans_info">{{userInfo.day_data.bike_mile}}km</view>
+                        </view>
                     </view>
-                </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="骑行">
-                    <view class="iconfont icon-zixingche"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">骑行</view>
-                        <view class="trans_info">{{userInfo.day_data.bike_mile}}km</view>
-                    </view>
-                </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="地铁">
-                    <view class="iconfont icon-ditie"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">地铁</view>
-                        <view class="trans_info">{{userInfo.day_data.subway_mile}}km</view>
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{0}}" data-limit="地铁">
+                        <view class="iconfont icon-ditie"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">地铁</view>
+                            <view class="trans_info">{{userInfo.day_data.subway_mile}}km</view>
+                        </view>
                     </view>
                 </view>
             </view>
@@ -81,32 +85,36 @@
                 </view>
             </view>
             <view class="down_part">
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="公交">
-                    <view class="iconfont icon-gongjiaoche"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">公交</view>
-                        <view class="trans_info">{{userInfo.week_data.bus_mile}}km</view>
+                <view class="down_part_up">
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="公交">
+                        <view class="iconfont icon-gongjiaoche"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">公交</view>
+                            <view class="trans_info">{{userInfo.week_data.bus_mile}}km</view>
+                        </view>
+                    </view>
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="步行">
+                        <view class="iconfont icon-buxing"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">步行</view>
+                            <view class="trans_info">{{userInfo.week_data.walk_mile}}km</view>
+                        </view>
                     </view>
                 </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="步行">
-                    <view class="iconfont icon-buxing"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">步行</view>
-                        <view class="trans_info">{{userInfo.week_data.walk_mile}}km</view>
+                <view class="down_part_down">
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="骑行">
+                        <view class="iconfont icon-zixingche"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">骑行</view>
+                            <view class="trans_info">{{userInfo.week_data.bike_mile}}km</view>
+                        </view>
                     </view>
-                </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="骑行">
-                    <view class="iconfont icon-zixingche"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">骑行</view>
-                        <view class="trans_info">{{userInfo.week_data.bike_mile}}km</view>
-                    </view>
-                </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="地铁">
-                    <view class="iconfont icon-ditie"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">地铁</view>
-                        <view class="trans_info">{{userInfo.week_data.subway_mile}}km</view>
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{1}}" data-limit="地铁">
+                        <view class="iconfont icon-ditie"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">地铁</view>
+                            <view class="trans_info">{{userInfo.week_data.subway_mile}}km</view>
+                        </view>
                     </view>
                 </view>
             </view>
@@ -129,32 +137,36 @@
                 </view>
             </view>
             <view class="down_part">
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="公交">
-                    <view class="iconfont icon-gongjiaoche"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">公交</view>
-                        <view class="trans_info">{{userInfo.week_data.bus_mile}}km</view>
+                <view class="down_part_up">
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="公交">
+                        <view class="iconfont icon-gongjiaoche"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">公交</view>
+                            <view class="trans_info">{{userInfo.total_data.bus_mile}}km</view>
+                        </view>
+                    </view>
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="步行">
+                        <view class="iconfont icon-buxing"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">步行</view>
+                            <view class="trans_info">{{userInfo.total_data.walk_mile}}km</view>
+                        </view>
                     </view>
                 </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="步行">
-                    <view class="iconfont icon-buxing"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">步行</view>
-                        <view class="trans_info">{{userInfo.week_data.walk_mile}}km</view>
+                <view class="down_part_down">
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="骑行">
+                        <view class="iconfont icon-zixingche"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">骑行</view>
+                            <view class="trans_info">{{userInfo.total_data.bike_mile}}km</view>
+                        </view>
                     </view>
-                </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="骑行">
-                    <view class="iconfont icon-zixingche"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">骑行</view>
-                        <view class="trans_info">{{userInfo.week_data.bike_mile}}km</view>
-                    </view>
-                </view>
-                <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="地铁">
-                    <view class="iconfont icon-ditie"></view>
-                    <view class="mileCount">
-                        <view class="trans_info">地铁</view>
-                        <view class="trans_info">{{userInfo.week_data.subway_mile}}km</view>
+                    <view class="trans_logo" bindtap="showRelatedPost" data-flag="{{2}}" data-limit="地铁">
+                        <view class="iconfont icon-ditie"></view>
+                        <view class="mileCount">
+                            <view class="trans_info">地铁</view>
+                            <view class="trans_info">{{userInfo.total_data.subway_mile}}km</view>
+                        </view>
                     </view>
                 </view>
             </view>
@@ -264,7 +276,7 @@
             </view>
         </view>
         <view wx:else class="empty">
-            <image class="bg" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/empty.png" mode="widthFix"></image>
+            <image class="bg" src="../../images/empty.png" mode="widthFix"></image>
             <view class="text">TA暂时还没有收藏帖子哦～</view>
         </view>
     </block>
@@ -294,7 +306,7 @@
             </view>
         </view>
         <view wx:else class="empty">
-            <image class="bg" src="cloud://jt-2gari7mwb9af3720.6a74-jt-2gari7mwb9af3720-1307191256/img/empty.png" mode="widthFix"></image>
+            <image class="bg" src="../../images/empty.png" mode="widthFix"></image>
             <view class="text">TA暂时还没有发过评论哦～</view>
         </view>
     </block>

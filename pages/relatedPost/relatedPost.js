@@ -30,32 +30,50 @@ Page({
         let postArr = postStr.split(',')
         // Arr只是所有帖子的id
         var postlist = []
-        for (let i = 0; i < postArr.length; i++) {
-            wx.cloud.database().collection('post_collection_jt')
-                .doc(postArr[i])
-                .get()
-                .then(res => {
-                    console.log('获取单条帖子成功', res)
-                    res.data.publish_time = util.formatTime(new Date(res.data.publish_time))
-                    res.data.imgLen = res.data.image_url.length
-                    res.data.carbon_reduction = res.data.carbon_reduction.toFixed(1)
-                    // 添加进去
-                    postlist.push(res.data)
-                    // 会有点问题，有时候最后一个进不来
-                    if (i == postArr.length - 1) {
-                        this.setData({
-                            postlist
-                        })
-                    }
+        if(postArr.length != 1 || postArr[0] != '') {
+            for (let i = 0; i < postArr.length; i++) {
+                wx.cloud.database().collection('post_collection_jt')
+                    .doc(postArr[i])
+                    .get()
+                    .then(res => {
+                        console.log('获取单条帖子成功', res)
+                        res.data.publish_time = util.formatTime(new Date(res.data.publish_time))
+                        res.data.imgLen = res.data.image_url.length
+                        res.data.carbon_reduction = res.data.carbon_reduction.toFixed(1)
+                        // 添加进去
+                        postlist.push(res.data)
+                        // 会有点问题，有时候最后一个进不来
+                        if (i == postArr.length - 1) {
+                            this.setData({
+                                postlist
+                            })
+                        }
+                    })
+                    .catch(err => {
+                        console.error('获取单挑帖子失败', err)
+                    })
+            }
+            setTimeout(() => {
+                this.setData({
+                    postlist
                 })
-                .catch(err => {
-                    console.error('获取单挑帖子失败', err)
-                })
+            }, 1500);
         }
-        setTimeout(() => {
-            this.setData({
-                postlist
-            })
-        }, 1500);
+        else {
+            wx.showModal({
+                title: '该用户暂未打卡～',
+                content: '',
+                showCancel: false,
+                cancelText: '取消',
+                cancelColor: '#000000',
+                confirmText: '确定',
+                confirmColor: '#3CC51F',
+              })
+              .then(res => {
+                  wx.navigateBack({
+                    delta: 0,
+                  })
+              })
+        }
     }
 })

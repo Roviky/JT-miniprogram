@@ -17,7 +17,7 @@ page {
   
   .theme {
     position: absolute;
-    right: 39rpx;
+    right: 15rpx;
     top: 9rpx;
     border: 2rpx solid #8DCBF9;
     background-color: #8DCBF9;

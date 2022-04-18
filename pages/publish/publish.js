@@ -211,7 +211,7 @@ Page({
         const mileCount = this.data.mileCount;
         // 判断里程的输入
         var regPos = /^[0-9]+.?[0-9]*/;
-        if (regPos.test(mileCount) && !isNaN(mileCount)) {
+        if (regPos.test(mileCount) && !isNaN(mileCount) && mileCount < 100) {
             console.log('输入的里程数是数字')
             this.setData({
                 mileCount: parseFloat(mileCount)
