@@ -1,0 +1,89 @@
+<view class="goodslist">
+    <view class="goods_img">
+        <image src="https://i.bmp.ovh/imgs/2022/03/945d569ea6092f48.webp" mode="widthFix" >
+        </image>
+    </view>
+    <view class="goods_item">
+        <view class="goods_name"  style="width: 258rpx; height: 40rpx; display: -webkit-box; box-sizing: border-box">校园志愿兑换</view>
+        <view class="goods_price" style="width: 176rpx; height: 40rpx; display: block; box-sizing: border-box">100简碳点</view>
+    </view>
+    <view class="out">
+        <button class="btn1" style="width: 193rpx; height: 92rpx; display: block; box-sizing: border-box; left: -19rpx; top: 3rpx">购买</button>
+     </view>
+</view>
+
+<view class="goodslist">
+    <view class="goods_img">
+        <image src="https://i.bmp.ovh/imgs/2022/03/0fd774d443547349.webp" mode="widthFix" >
+            
+        </image>
+    </view>
+    <view class="goods_item">
+        <view class="goods_name" style="width: 223rpx; height: 40rpx; display: -webkit-box; box-sizing: border-box">流浪猫饲料</view>
+        <view class="goods_price" style="width: 174rpx; height: 40rpx; display: block; box-sizing: border-box">200简碳点</view>
+    </view>
+    <view class="out">
+        <button class="btn1" style="width: auto;">购买</button>
+     </view>
+</view>
+
+<view class="goodslist">
+    <view class="goods_img">
+        <image src="https://i.bmp.ovh/imgs/2022/03/3b226f648772c60f.webp" mode="widthFix" >
+            
+        </image>
+    </view>
+    <view class="goods_item">
+        <view class="goods_name">便利店8折优惠</view>
+        <view class="goods_price" style="width: 172rpx; height: 50rpx; display: block; box-sizing: border-box">150简碳点</view>
+    </view>
+    <view class="out">
+        <button class="btn1" style="width: auto;">购买</button>
+     </view>
+</view>
+
+<view class="goodslist">
+    <view class="goods_img">
+        <image src="https://i.bmp.ovh/imgs/2022/03/945d569ea6092f48.webp" mode="widthFix" >
+            
+        </image>
+    </view>
+    <view class="goods_item">
+        <view class="goods_name"  style="width: 258rpx; height: 40rpx; display: -webkit-box; box-sizing: border-box">校园志愿兑换</view>
+        <view class="goods_price" style="width: 158rpx; height: 40rpx; display: block; box-sizing: border-box">100简碳点</view>
+    </view>
+    <view class="out">
+        <button class="btn1" style="width: auto;">购买</button>
+     </view>
+</view>
+
+<view class="goodslist">
+    <view class="goods_img">
+        <image src="https://i.bmp.ovh/imgs/2022/03/0fd774d443547349.webp" mode="widthFix" >
+            
+        </image>
+    </view>
+    <view class="goods_item">
+        <view class="goods_name">流浪猫饲料</view>
+        <view class="goods_price">200简碳点</view>
+    </view>
+    <view class="out">
+        <button class="btn1" style="width: auto;">购买</button>
+     </view>
+</view>
+
+<view class="goodslist">
+    <view class="goods_img">
+        <image src="https://i.bmp.ovh/imgs/2022/03/3b226f648772c60f.webp" mode="widthFix" >
+            
+        </image>
+    </view>
+    <view class="goods_item">
+        <view class="goods_name">便利店8折优惠</view>
+        <view class="goods_price">150简碳点</view>
+    </view>
+    <view class="out">
+        <button class="btn1" style="width: auto;">购买</button>
+     </view>
+</view>
+
