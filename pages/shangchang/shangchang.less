@@ -1,0 +1,37 @@
+.goodslist{
+    display: flex;
+    border-bottom: 5rpx solid #ccc;
+    padding-bottom: 15rpx;
+    .goods_img{
+        flex:2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        image{
+            height: 30vw;
+            width:100%;
+        }
+    }
+    .goods_item{
+        padding-left: 15rpx;
+        flex:4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .goods_name{
+            display:-webkit-box;
+        }
+        .goods_price{
+            color:#4e936f;
+            font-size: 32rpx;
+        }
+    }
+    .btn1 {
+        background-color: #204111;
+        color: #ccc;
+        height: fit-content;
+        border-radius: 24rpx;
+        margin: 20px auto;
+        right: 20rpx;
+      }
+}
